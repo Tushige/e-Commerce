@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------
+challenge 1: db Querying
+    - There were 2 ways to query the database.
+        1. db.GqlQuery("SELECT * FROM User WHERE username= :username", username=username).get()
+        2. User.all().filter('username=', username).get()
+    - However, only option 1 worked and option 2 didn't work.
+*****
+Solution: not found
+
+--------------------------------------------------------------------------------
+challenge 2: Cookie problem, query problem
+    -   When user signs up, the user is redirected to a welcome page, where
+        The page retrieves 'username' from a cookie and displays the username
+        on the page.
+        I thought of 2 ways of doing this.
+            1. pass username to a cookie and display it
+            2. pass user id via cookie and lookup in the database the 'username'
+            associated with the id.
+        - Option 2 seemed desirable to me, so I proceeded with it.
+        However, the cookie wasn't set by the time the welcome page loaded.
+        It worked if I reload the page because by then the cookie is visible
+
+*****
+Solution:
+-   I found out that it's not the cookie that is the problem.
+    Rather, the database is unable to find the user by the 'username' retrieved from
+    the cookie.
+    -   Perhaps, we're querying the database when it hasn't finished
+        storing user?
+    -   No! I just verified that I'm able to query the database using 'user id'
+        provided by the database when I store user. So user is definitely already
+        in the database
+--------------------------------------------------------------------------------

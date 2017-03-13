@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> New user Registration </title>
+</head>
+<body>
+    <h1>Sign Up!</h1>
+    <form method='post'>
+        <h3> username: </h3>
+        <input type='text' name='username' value='{{username}}'>
+        {{usernameError}}
+        <h3> password: </h3>
+        <input type='password' name='password' value='{{password}}'>
+        {{passError}}
+        <h3> verify password: </h3>
+        <input type='password' name='vpassword' value='{{vpassword}}'>
+        {{vpassError}}
+        <h3> e-mail: </h3>
+        <input type='e-mail' name='email' value='{{email}}'>
+        <br>
+        <br>
+        <input type='submit'>
+    </form>
+</body>
+</html>
