@@ -1,3 +1,3 @@
 # e-Commerce
-My version of an e-Commerce website.
+My version of a blogging website.
 Project is still in progress
