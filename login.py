@@ -2,7 +2,7 @@
 This file contains the class that handles user login logic
 '''
 from base import BaseHandler
-from entity import User
+from user_model import User
 from credential import Credential
 
 # handler class for route '/login'

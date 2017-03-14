@@ -1,0 +1,23 @@
+#page-title {
+    text-align: center;
+}
+body {
+    font-family: sans-serif;
+    width: 800px;
+    /* centering */
+    margin: 0 auto;
+    padding: 10px;
+}
+hr {
+    margin: 20px auto;
+}
+
+.blog-title {
+    font-weigth: bold;
+    font-size: 20px;
+    color: purple;
+}
+.blog-body {
+    margin: 0;
+    font-size: 17px
+}

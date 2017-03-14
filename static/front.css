@@ -1,0 +1,26 @@
+#page-title {
+    text-align: center;
+}
+body {
+    font-family: sans-serif;
+    width: 800px;
+    /* centering */
+    margin: 0 auto;
+    padding: 10px;
+}
+hr {
+    margin: 20px auto;
+}
+/* artwork will have 20px between each of them */
+.blog + .blog {
+    margin-top: 20px
+}
+.blog-title {
+    font-weigth: bold;
+    font-size: 20px;
+    color: purple;
+}
+.blog-body {
+    margin: 0;
+    font-size: 17px
+}

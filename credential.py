@@ -1,7 +1,7 @@
 '''
 This class 'Credential' contains methods that are used to validate user input
 '''
-from entity import User
+from user_model import User
 import hashlib
 import random
 import string

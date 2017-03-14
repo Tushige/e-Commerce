@@ -2,7 +2,7 @@
 This file contains the class that handles logged in user welcome page logic
 '''
 from base import BaseHandler
-from entity import User
+from user_model import User
 
 # handler class for route '/welcome'
 class WelcomeHandler(BaseHandler):

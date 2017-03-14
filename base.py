@@ -1,11 +1,14 @@
+'''
+This file contains the base controller class for all controllers in this project
+'''
+import os
 import webapp2
 import jinja2
-import os
-from entity import User
-# setup jinja2 directory
+#------------Setup jinja2 template------
+# path to our directory containing template files
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
-                               autoescape = True)
+                                autoescape = False)
 
 # Base handler class of all handler classes
 class BaseHandler(webapp2.RequestHandler):

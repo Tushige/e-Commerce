@@ -1,0 +1,7 @@
+Problems I encountered and fixes
+    1. configuring app.yaml
+        -   specifying the dependent 'libraries'
+    2. linking static css file to the html template
+        -   For this, I had to create a new folder called 'static'.
+            In the html file, link css normally. But, we need to
+            specify this path in app.yaml
