@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title> New Blog Post </title>
-    <link rel='stylesheet' type='text/css' href='static/newpost.css'>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <h1>New Blog Post</h1>
     <hr>
     <form method='post'>
@@ -17,5 +11,5 @@
         <input type='submit'>
     </form>
     <div class='error'>{{error}}</div>
-</body>
-</html>
+    
+{% endblock %}

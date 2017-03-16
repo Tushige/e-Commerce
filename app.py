@@ -5,8 +5,8 @@ from homepage import HomePageHandler
 from NewPost import NewpostHandler
 from Post import PostHandler
 from signup import SignupHandler
-from login import LoginHandler
-from logout import LogoutHandler
+from signin import SigninHandler
+from signout import SignoutHandler
 from welcome import WelcomeHandler
 
 routes = [
@@ -16,9 +16,9 @@ routes = [
     # /signup -> page for registering new user
     ('/signup', SignupHandler),
     # /login -> page for logging in
-    ('/login', LoginHandler),
+    ('/signin', SigninHandler),
     # /logout -> logout user
-    ('/logout', LogoutHandler),
+    ('/signout', SignoutHandler),
     # /username -> user front page
     ('/([a-zA-Z0-9_-]{3,20})', WelcomeHandler),
     # /<username>/newpost -> to submit a new post

@@ -6,9 +6,9 @@ from user_model import User
 from credential import Credential
 
 # handler class for route '/login'
-class LoginHandler(BaseHandler):
+class SigninHandler(BaseHandler):
     def get(self):
-        self.render('login.html')
+        self.render('signin.html')
 
     def post(self):
         username = self.request.get('username')
@@ -22,7 +22,7 @@ class LoginHandler(BaseHandler):
             user = User.getUserByName(username)
             # username not found in db -> show error
             if user is None:
-                self.render('login.html', userError='username not found!')
+                self.render('signin.html', userError='username not found!')
                 return
             hashPass = user.password
             isPassValid = Credential.isCredValid(password, hashPass)
@@ -34,4 +34,4 @@ class LoginHandler(BaseHandler):
                 self.redirect('/%s' % user.username)
             # username did not match with password -> show error
             else:
-                self.render('login.html', passError='username or password wrong!')
+                self.render('signing.html', passError='username or password wrong!')

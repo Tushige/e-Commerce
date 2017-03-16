@@ -7,7 +7,7 @@ from blog_model import Blog
 # handler class for '/newpost' - page for submitting a new post
 class NewpostHandler(BaseHandler):
     def render_newpost(self, subject='', content='', error=''):
-        self.render('newpost.html', subject=subject, content=content, error=error)
+        self.render('newpost.html', subject=subject, content=content, user=self.user,error=error)
 
     def get(self, param_username):
         # welcome user if active user matches user in url
@@ -33,4 +33,4 @@ class NewpostHandler(BaseHandler):
             self.redirect("/entry/%s" % newBlog.blog_id)
         else:
             error = 'Please submit both subject and content'
-            self.render_newpost(subject, content, error=error)
+            self.render_newpost(subject=subject, content=content, error=error)

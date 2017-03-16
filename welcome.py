@@ -14,7 +14,7 @@ class WelcomeHandler(BaseHandler):
             blogs = self.user.getBlogs()
             for blog in blogs:
                 print blog.subject
-            self.render('welcome.html', username=self.user.username, blogs=blogs)
+            self.render('welcome.html',user=self.user, blogs=blogs)
         # if user not found or username mismatch, go to homepage
         else:
             self.redirect('/')

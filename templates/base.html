@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blogzzz</title>
+        <link rel='stylesheet' type='text/css' href='static/front.css'>
+    </head>
+    <body>
+        <h1 id='page-title'>Blogzzz</h1>
+        <div class='nav'>
+            {% if user is none %}
+                <form action='/signin'>
+                    <input type='submit' value='Sign In'>
+                </form>
+            {% else %}
+                <form action='/signout'>
+                    <input type='submit' value='Sign Out'>
+                </form>
+                <form action='/{{user.username}}'>
+                    <input type='submit' value='my profile'>
+                </form>
+            {% endif %}
+        </div>
+        <!-- area for the derived html to post content-->
+        <div id='main-content'>
+            {% block content%}
+            {% endblock %}
+        </div>
+    </body>
+</html>

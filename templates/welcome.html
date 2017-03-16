@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> {{username}}/profile</Title
-    <link rel='stylesheet' type='text/css' href='static/front.css'>
-</head>
-<body>
-    <h1>Hello {{username}}</h1>
-        <form action='/newpost'>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Hello {{user.username}}</h1>
+        <form action='/{{user.username}}/newpost'>
             <input type='submit' value='newpost'>
         </form>
     {% if blogs %}
@@ -20,5 +15,4 @@
         {% endfor %}
         </div>
     {% endif %}
-</body>
-</html>
+{% endblock %}

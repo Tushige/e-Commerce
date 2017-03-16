@@ -7,7 +7,7 @@ from credential import Credential
 # handler class for route '/signup'
 class SignupHandler(BaseHandler):
     def get(self):
-        self.render('signup.html')
+        self.render('signup.html', user=self.user)
 
     def post(self):
         # retrieve user input
@@ -32,7 +32,8 @@ class SignupHandler(BaseHandler):
         else:
             if isUserRegistered is True:
                 usernameError = 'user is already registered!'
-            self.render('signup.html', username=username,
+            self.render('signup.html', user=self.user,
+                                       username=username,
                                        email=email,
                                        usernameError=usernameError,
                                        passError=passError,

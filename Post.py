@@ -11,18 +11,12 @@ class PostHandler(BaseHandler):
             return self.serveJson(postId)
         blog = Blog.getById(str(postId))
         if not blog:
-            print '2222222222222'
-            print blog.subject
-            print '2222222222222'
             self.error(404)
             return
-        print '1111111111111'
-        print blog.subject
-        print '1111111111111'
-        self.render('permalink.html', blog = blog)
+        self.render('permalink.html', blog = blog, user=self.user)
 
     def serveJson(self, postId):
-        blog = Blog.get_by_id(int(postId))
+        blog = Blog.getById(str(postId))
         json_file = {'subject': blog.subject, 'content': blog.content}
         json_out = json.dumps(json_file)
         return self.write(json_out)

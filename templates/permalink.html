@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> new blog </title>
-        <link rel='stylesheet' type='text/css' href='static/permalink.css'>
-    </head>
-    <body>
-        <h1 id='page-title'> Blog </h1>
-        <hr>
-        {% if blog %}
-            <div class='blog'>
-                <div class='blog-title'>{{blog.subject}} - created at {{blog.created}} </div>
-                <pre class='blog-body'> {{blog.content}}</pre>
-            </div>
-        {% endif %}
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <h1 id='page-title'> Blog </h1>
+    <hr>
+    {% if blog %}
+        <div class='blog'>
+            <div class='blog-title'>{{blog.subject}} - created at {{blog.created}} </div>
+            <pre class='blog-body'> {{blog.content}}</pre>
+        </div>
+    {% endif %}
+{% endblock %}

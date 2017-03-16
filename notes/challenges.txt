@@ -1,7 +1,13 @@
 TASKS:
-1.  Don't show 'login' button when user is already logged in
-2.  Only allow new blog submission for logged in user
-3.  Show <username> for all url endpoints if user is logged in
+1.  Don't show 'login' button when user is already logged in - DONE!
+2.  Only allow new blog submission for logged in user - DONE!
+3.  Show <username> for all url endpoints if user is logged in - DROPPED!
+4.  Add this functionality. If logged in user looks up profile of another user, it will show the page
+    from a visitor's perspective.
+    Currently, if link doesn't match current user's profile link, it simply
+    redirects to homepage.
+5. Add profile link on homepage - DONE!
+6. Create a skeleton html for every html that includes basic page navigator links at the top
 --------------------------------------------------------------------------------
 Problems I encountered and fixes
     1. configuring app.yaml

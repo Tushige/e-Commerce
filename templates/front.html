@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Blog</title>
-        <link rel='stylesheet' type='text/css' href='static/front.css'>
-    </head>
-    <body>
-        <h1 id='page-title'>My Amazing Blogs</h1>
-        {% if user is none %}
-            <form action='/login'>
-                <input type='submit' value='log in'>
-            </form>
-        {% else %}
-            <form action='/logout'>
-                <input type='submit' value='log out'>
-            </form>
-        {% endif %}
-        <br>
-        <br>
-        <hr>
-        {% if blogs %}
-            <div>
+{% extends 'base.html' %}
+{% block content %}
+    <!-- content of front page -->
+    {% if blogs %}
+        <div class='blog-list'>
             {% for blog in blogs %}
                 <div class='blog'>
-                        <div class='blog-title'><a href='http://localhost:8080/entry/{{blog.blog_id}}'> {{blog.blog_id}} {{blog.subject}}</a> by {{blog.username}} - created at {{blog.created}} </div>
+                        <div class='blog-title'><a href='http://localhost:8080/entry/{{blog.blog_id}}'>{{blog.subject}}</a> by {{blog.username}} - created at {{blog.created}} </div>
                     <pre class='blog-body'> {{blog.content}}</pre>
                 </div>
                 <hr>
             {% endfor %}
-            </div>
-        {% endif %}
         </div>
-    </body>
-</html>
+    {% endif %}
+
+{% endblock %}
