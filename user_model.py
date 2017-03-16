@@ -1,8 +1,9 @@
 '''
-This file contains the class that represents the google datastore 'entity'.
+This file contains the model class that represents the 'entity' User
 The class contains class methods that operate on the 'entity' object
 '''
 from google.appengine.ext import db
+from blog_model import Blog
 # create 'entity'
 class User(db.Model):
         # create column 'title' of type 'String'
@@ -11,6 +12,11 @@ class User(db.Model):
         password = db.StringProperty(required = True)
         email = db.StringProperty()
         created = db.DateTimeProperty(auto_now_add = True)
+
+        # @return: all the blogs submitted by this user
+        def getBlogs(self):
+            blogs = Blog.all().filter('username =', str(self.username))
+            return list(blogs)
 
         @classmethod
         # method for creating a User object

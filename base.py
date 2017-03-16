@@ -4,6 +4,7 @@ This file contains the base controller class for all controllers in this project
 import os
 import webapp2
 import jinja2
+from user_model import User
 #------------Setup jinja2 template------
 # path to our directory containing template files
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -16,6 +17,7 @@ class BaseHandler(webapp2.RequestHandler):
     def initialize(self, *a, **kw):
         webapp2.RequestHandler.initialize(self, *a, **kw)
         user_id = self.getCookie('user_id')
+        self.user = None
         if user_id:
             self.user = User.getUserById(user_id)
 

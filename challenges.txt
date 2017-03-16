@@ -1,3 +1,8 @@
+TASKS:
+1.  Don't show 'login' button when user is already logged in
+2.  Only allow new blog submission for logged in user
+3.  Show <username> for all url endpoints if user is logged in
+--------------------------------------------------------------------------------
 Problems I encountered and fixes
     1. configuring app.yaml
         -   specifying the dependent 'libraries'
@@ -5,3 +10,28 @@ Problems I encountered and fixes
         -   For this, I had to create a new folder called 'static'.
             In the html file, link css normally. But, we need to
             specify this path in app.yaml
+    3. QUERY problem
+        -   PROBLEM: My query only worked with db.GqlQuery but not with <Entity>.all().filter()
+        -   SOLUTION: There needs to be a space between the filter parameter and
+            filter property. For example:
+                Blog.all().filter('username =') instead of
+                Blog.all().filter('username=')
+    4. DB problem
+        a.  I put blog in database
+        2.  I try to access the above blog
+        3.  I get no result
+        4.  When I refresh the browser, I get result
+--------------------------------------------------------------------------------
+How to restrict new post submission to only logged in users?
+    -   we can check if the username of active user matches the username parameter
+        in the url
+--------------------------------------------------------------------------------
+How to keep track of active users
+    -   just keep a variable that contains user in the basehandler that every
+        handler can access
+--------------------------------------------------------------------------------
+How to keep track of all the blogs posted by a particular user?
+    1.  simply have 'username' per blog
+        When we want to query all the blogs for a user, we will use the username
+        field in the Blog model
+--------------------------------------------------------------------------------

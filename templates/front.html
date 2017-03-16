@@ -6,9 +6,15 @@
     </head>
     <body>
         <h1 id='page-title'>My Amazing Blogs</h1>
-        <form action='/login'>
-            <input type='submit' value='log in'>
-        </form
+        {% if user is none %}
+            <form action='/login'>
+                <input type='submit' value='log in'>
+            </form>
+        {% else %}
+            <form action='/logout'>
+                <input type='submit' value='log out'>
+            </form>
+        {% endif %}
         <br>
         <br>
         <hr>
@@ -16,7 +22,7 @@
             <div>
             {% for blog in blogs %}
                 <div class='blog'>
-                        <div class='blog-title'>{{blog.subject}} - created at {{blog.created}} </div>
+                        <div class='blog-title'><a href='http://localhost:8080/entry/{{blog.blog_id}}'> {{blog.blog_id}} {{blog.subject}}</a> by {{blog.username}} - created at {{blog.created}} </div>
                     <pre class='blog-body'> {{blog.content}}</pre>
                 </div>
                 <hr>

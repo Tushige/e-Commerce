@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title> {{username}}/profile</Title
+    <link rel='stylesheet' type='text/css' href='static/front.css'>
 </head>
 <body>
     <h1>Hello {{username}}</h1>
+        <form action='/newpost'>
+            <input type='submit' value='newpost'>
+        </form>
+    {% if blogs %}
+        <div>
+        {% for blog in blogs %}
+            <div class='blog'>
+                    <div class='blog-title'> {{blog.subject}} by {{blog.username}} created at {{blog.created}} </div>
+                <pre class='blog-body'> {{blog.content}}</pre>
+            </div>
+            <hr>
+        {% endfor %}
+        </div>
+    {% endif %}
 </body>
 </html>

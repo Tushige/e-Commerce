@@ -5,7 +5,7 @@ from base import BaseHandler
 from user_model import User
 from credential import Credential
 
-class LogOut(BaseHandler):
-    def get():
+class LogoutHandler(BaseHandler):
+    def get(self):
         self.logout()
         self.redirect('/')

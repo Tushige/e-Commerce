@@ -5,11 +5,13 @@ from base import BaseHandler
 from google.appengine.ext import db
 from blog_model import Blog
 import json
+import webapp2
+
 # handler class for route '/' - homepage, displays all blog entries
 class HomePageHandler(BaseHandler):
-    def render_front(self, subject="", content="", error=""):
+    def render_front(self, user=None, error=""):
         blogs = Blog.getAll()
-        self.render('front.html', blogs = blogs)
+        self.render('front.html', user=user, blogs = blogs)
 
     # user visits page, serve front.html
     def get(self, param):
@@ -17,7 +19,7 @@ class HomePageHandler(BaseHandler):
         if param == '.json':
             return self.serveJson()
         # otherwise, serve normal html file
-        self.render_front()
+        self.render_front(user=self.user)
 
     # sends JSON formatted page of the homepage
     def serveJson(self):

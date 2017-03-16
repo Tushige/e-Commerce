@@ -9,10 +9,16 @@ class PostHandler(BaseHandler):
     def get(self, postId, param):
         if param == '.json':
             return self.serveJson(postId)
-        blog = Blog.get_by_id(int(postId))
+        blog = Blog.getById(str(postId))
         if not blog:
+            print '2222222222222'
+            print blog.subject
+            print '2222222222222'
             self.error(404)
             return
+        print '1111111111111'
+        print blog.subject
+        print '1111111111111'
         self.render('permalink.html', blog = blog)
 
     def serveJson(self, postId):
