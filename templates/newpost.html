@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel='stylesheet' type='text/css' href='static/newpost.css'>
+{% endblock %}
+
 {% block content %}
     <h1>New Blog Post</h1>
     <hr>
@@ -11,5 +16,5 @@
         <input type='submit'>
     </form>
     <div class='error'>{{error}}</div>
-    
+
 {% endblock %}

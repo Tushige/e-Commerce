@@ -8,11 +8,11 @@ from signup import SignupHandler
 from signin import SigninHandler
 from signout import SignoutHandler
 from welcome import WelcomeHandler
-
+import string
 routes = [
     ('/(.json){0,1}', HomePageHandler),
     # /<post_id> -> page of a blog post
-    ('/entry/([a-zA-Z0-9_-]{1,100})(.json){0,1}', PostHandler),
+    ('/entry/([%s]{1,100})(.json){0,1}' % string.ascii_letters, PostHandler),
     # /signup -> page for registering new user
     ('/signup', SignupHandler),
     # /login -> page for logging in

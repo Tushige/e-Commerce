@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blogzzz</title>
-        <link rel='stylesheet' type='text/css' href='static/front.css'>
+        {% block head %}
+            <meta charset='utf-8'>
+            <meta http-equiv='X-UA-Compatible' content='IE-edge'>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <title>Blogzzz</title>
+            <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+            <link rel='stylesheet' href='static/bootstrap/css/bootstrap.css'>
+            <link rel='stylesheet' type='text/css' href='static/base.css'>
+        {% endblock %}
     </head>
     <body>
-        <h1 id='page-title'>Blogzzz</h1>
-        <div class='nav'>
-            {% if user is none %}
-                <form action='/signin'>
-                    <input type='submit' value='Sign In'>
-                </form>
-            {% else %}
-                <form action='/signout'>
-                    <input type='submit' value='Sign Out'>
-                </form>
-                <form action='/{{user.username}}'>
-                    <input type='submit' value='my profile'>
-                </form>
-            {% endif %}
-        </div>
+        <header>
+            <div class='container-fluid'>
+                <div class='row'>
+                    <!-- page title-->
+                    <div class='col-md-6' id="title-header">
+                        <h1 class="text-left text-super text-thin">
+                            <a href='/'>
+                                BLOGzzz
+                            </a>
+                        </h1>
+                    </div>
+                    {% if user is none %}
+                        <!-- Sign In button-->
+                        <div class='col-md-6 btn-header'>
+                            <a href="http://localhost:8080/signin">
+                                <span class='btn-header'>Sign in</span>
+                            </a>
+                        </div>
+                    {% else %}
+                        <!-- Sign Out button-->
+                        <div class='col-md-3 btn-header'>
+                            <a href="http://localhost:8080/signout">
+                                <span>Sign Out</span>
+                            </a>
+                        </div>
+
+                        <!-- my profile button-->
+                        <div class='col-md-3 btn-header'>
+                            <a href="http://localhost:8080/{{user.username}}">
+                                <span>My Profile</span>
+                            </a>
+                        </div>
+
+                    {% endif %}
+                    </div>
+                </div> <!-- row-->
+            </div> <!-- container-->
+        </header>
         <!-- area for the derived html to post content-->
         <div id='main-content'>
             {% block content%}

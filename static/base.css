@@ -1,0 +1,76 @@
+header {
+    background-color: #532d5e;
+}
+
+/* Blogzzz*/
+#title-header a{
+    text-decoration: none;
+    user-select:none;
+    cursor: pointer;
+    color: white;
+}
+#title-header img {
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+}
+body {
+    font-family:'Lato', sans-serif;
+}
+
+pre {
+    /* allows text wrapping for pre tagged text */
+    white-space: pre-wrap;
+    font-family:'Lato', sans-serif;
+    font-size:18px;
+}
+.btn-header a{
+    margin: 10px;
+    float: right;
+    text-decoration: none!important;
+}
+/* Sign In, Sign Out, My Profile buttons*/
+.btn-header span{
+    display: block;
+    float: right;
+    position:relative;
+    /*why does this add smoothness?*/
+    top: 0px;
+    margin-top: 10px;
+    background-color:rgba(0,0,0,0.0);;
+    color:white;
+
+    border-color: rgba(255,255,255,0.3);
+    border-radius:10px;
+    border-width: 1px;
+    border-style: solid;
+
+    width:140px;
+    height:50px;
+    font-size:20px;
+    font-weight: 100;
+    /* positions text 40px below the top*/
+    line-height:45px;
+    text-align:center;
+    text-decoration: none;
+    user-select:none;
+}
+.btn-header span:hover {
+    background-color:#e0e2e5;
+    color: #532d5e;
+}
+.text-super {
+    font-size:48px;
+}
+.text-thin {
+    font-weight: 100;
+}
+.verticalLine {
+  border-left: thin solid #d1d1d1;
+}
+hr {
+    border:none;
+    height:1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}

@@ -1,16 +1,5 @@
-body {
-    font-family: sans-serif;
-    width: 800px;
-    /* centering */
-    margin: 0 auto;
-    padding: 10px;
-}
-
 .error {
     color: red
-}
-h2 {
-    font-weight: normal;
 }
 input[type=text] {
     color: grey;

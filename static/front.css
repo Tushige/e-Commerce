@@ -1,26 +1,50 @@
-#page-title {
-    text-align: center;
+/* the outmost container of all blog posts */
+.container-main {
+    margin-top:100px;
 }
-body {
-    font-family: sans-serif;
-    width: 800px;
-    /* centering */
-    margin: 0 auto;
-    padding: 10px;
+/* the single column containing all blog posts */
+.container-blogs {
+    float:right;
 }
-hr {
-    margin: 20px auto;
+/* blog content */
+.container-content {
+    color:black;
+    font-size:12px;
+    text-overflow: ellipsis;
 }
-/* artwork will have 20px between each of them */
-.blog + .blog {
-    margin-top: 20px
+
+/* title of a blog post */
+.blog-title a{
+    text-decoration: none;
+    cursor: pointer;
+    font-size:32px;
+    font-weight: bold;
+    color:black;
 }
-.blog-title {
-    font-weigth: bold;
-    font-size: 20px;
-    color: purple;
+
+/************************************************
+ * The area containing info of the blog submittor
+ ************************************************/
+.profile-area {
+    display: flex;
 }
-.blog-body {
-    margin: 0;
-    font-size: 17px
+/* profile image of the blog submitter */
+.img-profile {
+    display: inline;
+    width:50px;
+    height:50px;
+    background-color:none;
+    border-radius: 50%;
+}
+.username-profile {
+    margin-left:10px;
+    margin-top: 0;
+    color:#848484;
+    font-size:22px;
+}
+.date-profile {
+    margin-left: 5px;
+    margin-top:0;
+    font-size:16px;
+    color:#848484;
 }

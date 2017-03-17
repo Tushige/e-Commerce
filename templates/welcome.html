@@ -1,18 +1,51 @@
 {% extends 'base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <link rel='stylesheet' type='text/css' href='static/welcome.css'>
+{% endblock %}
+
 {% block content %}
-    <h1>Hello {{user.username}}</h1>
-        <form action='/{{user.username}}/newpost'>
-            <input type='submit' value='newpost'>
-        </form>
-    {% if blogs %}
-        <div>
-        {% for blog in blogs %}
-            <div class='blog'>
-                    <div class='blog-title'> {{blog.subject}} by {{blog.username}} created at {{blog.created}} </div>
-                <pre class='blog-body'> {{blog.content}}</pre>
+    <!-- first pane: welcome user-->
+    <div class="container-fluid">
+        <div class="row container-welcome">
+            <h1 id='text-welcome'>Welcome {{user.username}}</h1>
+            <div id='btn-newpost'>
+                <!-- newpost link button -->
+                <a href="localhost:8080/{{user.username}}/newpost">
+                    <span>write new post</span>
+                </a>
             </div>
-            <hr>
-        {% endfor %}
         </div>
+    </div>
+
+    <!-- second pane: user submission history-->
+    <div id="title-history">
+        <!-- title of the second pane-->
+        <h3>
+            Your Submission History
+        </h3>
+    </div>
+    <hr style="width:70%;">
+
+    <!-- container of rows of submitted blog posts -->
+    <div id="blogs-container">
+        {% if blogs %}
+            {% for blog in blogs %}
+                <div class="row">
+                    <div class='blog-title'>
+                        <h3 class="blog-title">
+                            {{blog.subject}}
+                        </h3>
+                        <h4>created at {{blog.created}}</h4>
+                        <!-- abstract text of the blog post-->
+                        <div class='container-content'>
+                            <pre>{{blog.content}}</pre>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
     {% endif %}
 {% endblock %}
