@@ -1,20 +1,32 @@
 {% extends 'base.html' %}
+<!-- add additional info to head-->
 {% block head %}
     {{ super() }}
-    <link rel='stylesheet' type='text/css' href='static/newpost.css'>
+    <title>New Blog Submission</title>
+    <link rel="stylesheet" type="text/css" href="static/newpost.css">
 {% endblock %}
-
+<!-- Fill the actual page content -->
 {% block content %}
-    <h1>New Blog Post</h1>
+<div id='main-container'>
+    <!-- title of the main pane -->
+    <div>
+        <h1 id="title">Enter your submission</h1>
+    </div>
     <hr>
+
+    <!-- submission form -->
     <form method='post'>
         <h2>Subject:</h2>
         <input id='subject' type='text' name='subject' value='{{subject}}'>
         <br>
         <h2>Content:</h2>
-        <textarea name='content'>{{content}}</textarea> <br>
+        <textarea name='content'>
+            {{content}}
+        </textarea> <br>
         <input type='submit'>
     </form>
-    <div class='error'>{{error}}</div>
-
+    <div class='error'>
+        {{error}}
+    </div>
+</div>
 {% endblock %}

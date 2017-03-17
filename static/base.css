@@ -2,20 +2,17 @@ header {
     background-color: #532d5e;
 }
 
-/* Blogzzz*/
+/* main title of web page: Blogzzz*/
 #title-header a{
     text-decoration: none;
     user-select:none;
     cursor: pointer;
     color: white;
 }
-#title-header img {
-    border-radius: 50%;
-    width:50px;
-    height:50px;
-}
+/* applied to all templates deriving from base.html */
 body {
     font-family:'Lato', sans-serif;
+    background-color: #fcf9f9;
 }
 
 pre {
@@ -24,12 +21,12 @@ pre {
     font-family:'Lato', sans-serif;
     font-size:18px;
 }
+/* Sign In, Sign Out, My Profile buttons*/
 .btn-header a{
     margin: 10px;
     float: right;
     text-decoration: none!important;
 }
-/* Sign In, Sign Out, My Profile buttons*/
 .btn-header span{
     display: block;
     float: right;
@@ -55,16 +52,20 @@ pre {
     text-decoration: none;
     user-select:none;
 }
+/* changes color of span buttons when user hovers over it */
 .btn-header span:hover {
     background-color:#e0e2e5;
     color: #532d5e;
 }
+/* describes a large text: used in titles */
 .text-super {
     font-size:48px;
 }
+/* describes a thin text: used in pane titles */
 .text-thin {
     font-weight: 100;
 }
+/* draws a vertical line to a container element */
 .verticalLine {
   border-left: thin solid #d1d1d1;
 }

@@ -41,3 +41,10 @@ How to keep track of all the blogs posted by a particular user?
         When we want to query all the blogs for a user, we will use the username
         field in the Blog model
 --------------------------------------------------------------------------------
+The 'newpost' page could not load static files.
+Apparently, we need to modify the app.yaml file to include
+-   url: /tuke/static
+    static_dir: static
+to indicate that static file request for url starting with /tuke should look
+for static files in the 'static' directory
+--------------------------------------------------------------------------------

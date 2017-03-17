@@ -1,23 +1,41 @@
-#page-title {
-    text-align: center;
-}
-body {
-    font-family: sans-serif;
-    width: 800px;
-    /* centering */
+/* main container of the blog post*/
+#container-blog {
+    width:70%;
     margin: 0 auto;
-    padding: 10px;
-}
-hr {
-    margin: 20px auto;
+    margin-top:50px;
 }
 
-.blog-title {
-    font-weigth: bold;
-    font-size: 20px;
-    color: purple;
+#blog-title {
+    font-weight: bold;
+    font-size: 52px;
 }
 .blog-body {
     margin: 0;
     font-size: 17px
+}
+/************************************************
+ * The area containing info of the blog submittor
+ ************************************************/
+.profile-area {
+    display: flex;
+}
+/* profile image of the blog submitter */
+.img-profile {
+    display: inline;
+    width:50px;
+    height:50px;
+    background-color:none;
+    border-radius: 50%;
+}
+.username-profile {
+    margin-left:10px;
+    margin-top: 0;
+    color:#848484;
+    font-size:22px;
+}
+.date-profile {
+    margin-left: 5px;
+    margin-top:0;
+    font-size:16px;
+    color:#848484;
 }

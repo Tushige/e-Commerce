@@ -1,11 +1,34 @@
 {% extends 'base.html' %}
+<!-- add additional info to head-->
+{% block head %}
+    {{ super() }}
+    <link rel='stylesheet' type='text/css' href='static/permalink.css'>
+{% endblock %}
+
+<!-- Fill the actual page content -->
 {% block content %}
-    <h1 id='page-title'> Blog </h1>
-    <hr>
     {% if blog %}
-        <div class='blog'>
-            <div class='blog-title'>{{blog.subject}} - created at {{blog.created}} </div>
-            <pre class='blog-body'> {{blog.content}}</pre>
+    <div id="container-blog">
+        <h1 id='blog-title'>
+            {{blog.subject}}
+        </h1>
+        <hr>
+
+        <!-- submitter info on the blog post entry-->
+        <div class="profile-area">
+            <img src="static/images/saitama.jpg" class="img-profile">
+            <div>
+                <h4 class="username-profile">
+                    <a href="/{{blog.username}}">{{blog.username}}</a>
+                </h4>
+                <h4 class="date-profile">{{blog.created}}</h4>
+            </div>
         </div>
+
+        <!-- Blog content -->
+        <div class='container-content'>
+            <pre>{{blog.content}}</pre>
+        </div>
+    </div>
     {% endif %}
 {% endblock %}

@@ -7,8 +7,17 @@ threadsafe: true
 handlers:
 -   url: /static
     static_dir: static
+
+    # this is necessary for /tuke/static to work: serving static files
+-   url: /tuke/static
+    static_dir: static
+
+-   url: /entry/static
+    static_dir: static
+
 -   url: /.*
     script: app.app
+    
 libraries:
 -   name: jinja2
     version: latest
