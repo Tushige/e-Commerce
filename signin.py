@@ -8,7 +8,7 @@ from credential import Credential
 # handler class for route '/login'
 class SigninHandler(BaseHandler):
     def get(self):
-        self.render('signin.html')
+        self.render('signin.html', user=self.user)
 
     def post(self):
         username = self.request.get('username')
@@ -22,7 +22,7 @@ class SigninHandler(BaseHandler):
             user = User.getUserByName(username)
             # username not found in db -> show error
             if user is None:
-                self.render('signin.html', userError='username not found!')
+                self.render('signin.html', user=self.user, userError='username not found!')
                 return
             hashPass = user.password
             isPassValid = Credential.isCredValid(password, hashPass)
@@ -34,4 +34,6 @@ class SigninHandler(BaseHandler):
                 self.redirect('/%s' % user.username)
             # username did not match with password -> show error
             else:
-                self.render('signing.html', passError='username or password wrong!')
+                self.render('signin.html', user=self.user, passError='username or password wrong!')
+        else:
+            self.render('signin.html', user=self.user, userError=userError, passError=passError)

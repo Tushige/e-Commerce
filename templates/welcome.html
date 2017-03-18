@@ -6,6 +6,11 @@
     <link rel='stylesheet' type='text/css' href='static/welcome.css'>
 {% endblock %}
 
+<!-- use header provided by base -->
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
 {% block content %}
     <!-- first pane: welcome user-->
     <div class="container-fluid">

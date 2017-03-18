@@ -5,6 +5,11 @@
     <link rel='stylesheet' type='text/css' href='static/permalink.css'>
 {% endblock %}
 
+<!-- use header provided by base -->
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
 <!-- Fill the actual page content -->
 {% block content %}
     {% if blog %}

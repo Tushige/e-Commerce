@@ -1,25 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> New user Registration </title>
-</head>
-<body>
-    <h1>Sign Up</h1>
-    <form method='post'>
-        <h3> username: </h3>
-        <input type='text' name='username' value='{{username}}'>
-        {{usernameError}}
-        <h3> password: </h3>
-        <input type='password' name='password' value='{{password}}'>
-        {{passError}}
-        <h3> verify password: </h3>
-        <input type='password' name='vpassword' value='{{vpassword}}'>
-        {{vpassError}}
-        <h3> e-mail: </h3>
-        <input type='e-mail' name='email' value='{{email}}'>
-        <br>
-        <br>
-        <input type='submit'>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+<!-- add additional info to head-->
+{% block head %}
+    <!-- import parent's content-->
+    {{ super() }}
+
+    <title>Sign Up</title>
+    <link rel='stylesheet' type='text/css' href='static/signin.css'>
+{% endblock %}
+<!-- use custom header for sign-in and sign-up pages -->
+{% block header %}
+    {% include 'registration_header.html' %}
+{% endblock %}
+
+<!-- Add own page content -->
+{% block content %}
+    <!--Sign Up box-->
+    <div class='container-panel'>
+        <div class="title-container">
+            <h1>Sign Up</h1>
+        </div>
+        <!-- Sign Up form-->
+        <form method='post'>
+
+            <!--username input-->
+            <h3 class='form-title'>
+                username
+            </h3>
+            <input type='text' name='username' value='{{username}}'><br>
+            <!--ERROR message for username input-->
+            <label>
+                {{usernameError}}
+            </label>
+            <!--password input-->
+            <h3 class='form-title'> password </h3>
+            <input type='password' name='password' value='{{password}}'><br>
+            <!--ERROR message for password input-->
+            <label>
+                {{passError}}
+            </label>
+            <!--verify password input-->
+            <h3 class='form-title'>
+                verify password
+            </h3>
+            <input type='password' name='vpassword' value='{{vpassword}}'><br>
+            <!--ERROR message for verify password input-->
+            <label>
+                {{vpassError}}
+            </label>
+            <!--email input-->
+            <h3 class='form-title'>
+                e-mail:
+            </h3>
+            <input type='e-mail' name='email' value='{{email}}'>
+
+            <br>
+            <br>
+            <input type='submit' class='btn'>
+        </form>
+    </div>
+{% endblock %}

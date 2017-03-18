@@ -1,5 +1,11 @@
 header {
     background-color: #532d5e;
+    /*
+     * got this gradient from www.uigradients.com
+     */
+    background: #C04848; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* main title of web page: Blogzzz*/
@@ -28,8 +34,8 @@ pre {
     text-decoration: none!important;
 }
 .btn-header span{
-    display: block;
-    float: right;
+    display: inline-block;
+    float:center;
     position:relative;
     /*why does this add smoothness?*/
     top: 0px;
@@ -49,7 +55,6 @@ pre {
     /* positions text 40px below the top*/
     line-height:45px;
     text-align:center;
-    text-decoration: none;
     user-select:none;
 }
 /* changes color of span buttons when user hovers over it */

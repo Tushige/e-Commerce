@@ -5,6 +5,12 @@
     <title>New Blog Submission</title>
     <link rel="stylesheet" type="text/css" href="static/newpost.css">
 {% endblock %}
+
+<!-- use header provided by base -->
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
 <!-- Fill the actual page content -->
 {% block content %}
 <div id='main-container'>

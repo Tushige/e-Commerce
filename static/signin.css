@@ -1,0 +1,132 @@
+/***************************
+ * This file is used to style
+ *  1.  signin.html
+ *  2.  signup.html
+ *
+ */
+body {
+    /*
+     * got this gradient from www.uigradients.com
+     */
+    background: #C04848; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* The header of the web page*/
+#title-header {
+    background-color: #fcf9f9;
+}
+
+/* The title of the web page*/
+#title-header a{
+    margin:0;
+    text-decoration: none;
+    cursor:pointer;
+    color: #532d5e;
+}
+
+/* main content box */
+.container-panel {
+    width:40%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255,255,255, 0.3 );
+    background-color: rgba(0,0,0, 0.1 );
+    border-radius: 30%;
+}
+
+/* the title of main content*/
+.title-container h1 {
+    color:white;
+}
+
+/* texts such as 'username', 'password'*/
+.form-title {
+    color:white;
+}
+/* the text, 'need to create a new account'*/
+.form-comment {
+    color:white;
+    font-size: 22px;
+}
+/* error messages for incorrect input */
+.error-msg {
+    color:red;
+}
+
+/* username, password fields */
+input {
+    width: 300px;
+    height:30px;
+    background: transparent;
+    border:0;
+    border-radius: 0;
+    user-select:none;
+    box-shadow: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    text-align: left;
+    /* changes cursor color to white */
+    color:white;
+}
+/* add/modify style for submit input*/
+.btn {
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
+    width:300px;
+    height:50px;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: rgba(255,255,255,0.6);
+    color:white;
+    transition: 0.5s linear box-shadow;
+}
+
+/*--- specific to signin.html ---*/
+#signup-container {
+    margin-top:30px;
+}
+/* container of the 'signup' span field*/
+#btn-signup-container {
+    color: white;
+    text-align: center;
+}
+
+#btn-signup-container a{
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+#btn-signup-container span{
+    display: block;
+    float: none;
+    top: 0px;
+    font-weight: 100;
+    font-size: 20px;
+    transition: font 0.5s ease;
+    background-color:rgba(0,0,0,0.0);
+    border-color: rgba(255,255,255,0.6);
+    border-radius:10px;
+    border-width: 1px;
+    border-style: solid;
+    color:white;
+    width:300px;
+    height:50px;
+
+    /* positions text 40px below the top*/
+    line-height:40px;
+    text-align:center;
+}
+
+#btn-signup-container span:hover,
+.btn:hover {
+    transition: font 0.5s ease;
+    font-size: 22px;
+    background-color:#e0e2e5;
+    color: #532d5e;
+}

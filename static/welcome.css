@@ -11,6 +11,7 @@
     text-align: center;
     padding-top: 200px;
     padding-bottom: 350px;
+    outline: 1px solid red !important;
 }
 
 #text-welcome{
@@ -28,6 +29,7 @@
     display: block;
     top: 0px;
     font-weight: 100;
+    transition: font 1.7s ease;
     font-size: 20px;
     background-color:rgba(0,0,0,0.0);;
     border-color: rgba(255,255,255,0.6);
@@ -44,7 +46,8 @@
     user-select:none;
 }
 #btn-newpost span:hover {
-    font-weight: 500;
+    transition: font 0.5s ease;
+    font-size: 22px;
     background-color:#e0e2e5;
     color: #532d5e;
 }

@@ -4,7 +4,13 @@
     {{ super() }}
     <link rel='stylesheet' type='text/css' href='static/front.css'>
 {% endblock %}
-<!-- Fill the actual page content -->
+
+<!-- use header provided by base -->
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
+<!-- Add own page content -->
 {% block content %}
     <!-- content of front page: only shows if blogs are available -->
     {% if blogs %}

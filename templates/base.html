@@ -13,6 +13,7 @@
     </head>
     <body>
         <header>
+            {% block header %}
             <div class='container-fluid'>
                 <div class='row'>
                     <!-- page title-->
@@ -27,7 +28,7 @@
                         <!-- Sign In button-->
                         <div class='col-md-6 btn-header'>
                             <a href="http://localhost:8080/signin">
-                                <span class='btn-header'>Sign in</span>
+                                <span>Sign in</span>
                             </a>
                         </div>
                     {% else %}
@@ -49,6 +50,7 @@
                     </div>
                 </div> <!-- row-->
             </div> <!-- container-->
+            {% endblock%}
         </header>
         <!-- area for the derived html to post content-->
         <div id='main-content'>
