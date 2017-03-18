@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!-- add additional info to head-->
+{% block head %}
+    {{ super() }}
+    <link rel='stylesheet' type='text/css' href='static/error404.css'>
+{% endblock %}
+
+<!-- use header provided by base -->
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
+<!-- Add own page content -->
+{% block content %}
+    <div id='error-msg'>
+        <h3 class='text-super'>Sorry, that page doesn't exist!</h3>
+    </div>
+{% endblock %}

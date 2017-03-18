@@ -31,7 +31,7 @@ class SigninHandler(BaseHandler):
             if isPassValid:
                 self.setCookie('user_id', user.key().id())
                 self.setCookie('username', user.username)
-                self.redirect('/%s' % user.username)
+                self.redirect('/author/%s' % user.username)
             # username did not match with password -> show error
             else:
                 self.render('signin.html', user=self.user, passError='username or password wrong!')

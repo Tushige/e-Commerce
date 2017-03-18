@@ -44,3 +44,9 @@ class User(db.Model):
         @classmethod
         def getUserById(cls, user_id):
             return User.get_by_id(int(user_id))
+
+        @classmethod
+        # @return: list of blogs submitted by <username>
+        def getBlogsByUsername(cls, username):
+            blogs = Blog.all().filter('username =', str(username))
+            return list(blogs)

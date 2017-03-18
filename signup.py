@@ -26,7 +26,7 @@ class SignupHandler(BaseHandler):
         if usernameError=='' and passError=='' and vpassError=='' and isUserRegistered is False:
             user = self.saveUser(username, password, email)
             self.login(user)
-            self.redirect('/%s' % username)
+            self.redirect('/author/%s' % username)
 
         # if error found, display them
         else:
