@@ -1,0 +1,50 @@
+/* outermost container*/
+#container {
+    width:70%;
+    text-align: left;
+    margin: 0 auto;
+}
+/* container for user profile information*/
+#profile {
+    display: flex;
+    margin-top:50px;
+    margin-bottom:50px;
+    text-align: left;
+}
+
+#profile-img {
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+}
+/* container for user identification info*/
+#profile-details {
+    margin-left:10px;
+}
+/* user details such as occupation, place of employment etc*/
+#user-info {
+    color: #8e8e8e;
+    font-size:36px;
+}
+#profile-username {
+    font-weight: bold;
+    font-size: 50px;
+}
+/* page subtitle*/
+#page-subtitle {
+    text-align: center;
+}
+#page-subtitle h3 {
+    font-weight: 100;
+    font-size: 52px;
+}
+.blog-title {
+    font-weight: bold;
+}
+/* container for placeholder message */
+.display-msg-container {
+    text-align: center;
+}
+.display-msg h3 {
+    color: red;
+}

@@ -10,6 +10,8 @@ class User(db.Model):
         # set the constraint that this field has to be filled before ->into db
         username = db.StringProperty(required = True)
         password = db.StringProperty(required = True)
+        occupation = db.StringProperty()
+        employment = db.StringProperty()
         email = db.StringProperty()
         created = db.DateTimeProperty(auto_now_add = True)
 

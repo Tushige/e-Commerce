@@ -15,6 +15,7 @@ class WelcomeHandler(BaseHandler):
         # if visiting someone else's profile
         elif User.checkRegistration(param_username):
             blogs = User.getBlogsByUsername(param_username)
-            self.render('profile.html', user=self.user, blogs=blogs)
+            user = User.getUserByName(param_username)
+            self.render('profile.html', user=self.user, author=user, blogs=blogs)
         else:
             self.render('error404.html', user=self.user)

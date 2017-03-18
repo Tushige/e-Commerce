@@ -3,8 +3,7 @@
 {% block head %}
     <!-- import parent's content-->
     {{ super() }}
-    <title>Submit new post</title>
-    <link rel='stylesheet' type='text/css' href='static/welcome.css'>
+    <link rel='stylesheet' type='text/css' href='static/profile.css'>
 {% endblock %}
 
 <!-- use header provided by base -->
@@ -13,40 +12,56 @@
 {% endblock %}
 
 {% block content %}
-    <!-- user submission history-->
-    <div id="title-history">
-        <!-- title of the second pane-->
-        <h3>
-            Submission History
-        </h3>
-    </div>
-    <hr style="width:70%;">
-
-    <!-- container of rows of submitted blog posts -->
-    <div id="blogs-container">
-        {% if blogs %}
-            {% for blog in blogs %}
-                <div class="row">
-                    <div>
-                        <h3 class='blog-title'>
-                            {{blog.subject}}
-                        </h3>
-                        <h4>created at {{blog.created}}</h4>
-                        <!-- abstract text of the blog post-->
-                        <div class='content-container'>
-                            <pre>{{blog.content}}</pre>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-            {% endfor %}
-        {% else %}
-
-        <!--message shown if user has no blogs submitted-->
-        <div class='display-msg'>
-            <h3 class='text-thin'>
-                Nothing....
+    <div id="container">
+        <!--Profile Information-->
+        <div id='profile'>
+            <img src="static/images/saitama.jpg" id="profile-img">
+            <div id="profile-details">
+                <h2 id="profile-username">{{author.username}}</h2>
+                {% if author.occupation and author.employment%}
+                <h4 id="user-info">{{author.occupation}}, {{author.employment}} </h4>
+                {% elif author.occupation %}
+                    <h4 id="user-info">{{author.occupation}}</h4>
+                {% elif author.employement %}
+                    <h4 id="user-info">{{author.employment}}</h4>
+                {% endif %}
+            </div>
+        </div>
+        <!-- user submission history-->
+        <div id="page-subtitle">
+            <!-- title of the second pane-->
+            <h3>
+                Submission History
             </h3>
+        </div>
+        <hr style="width:70%;">
+
+        <!-- container of rows of submitted blog posts -->
+        <div>
+            {% if blogs %}
+                {% for blog in blogs %}
+                    <div class="row">
+                        <div>
+                            <h3 class='blog-title'>
+                                {{blog.subject}}
+                            </h3>
+                            <h4>created at {{blog.created}}</h4>
+                            <!-- abstract text of the blog post-->
+                            <div>
+                                <pre>{{blog.content}}</pre>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+
+            <!--message shown if user has no blogs submitted-->
+            <div class='display-msg-container'>
+                <h3 class='text-thin'>
+                    Nothing....
+                </h3>
+            </div>
         </div>
     </div>
     {% endif %}
