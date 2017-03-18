@@ -11,7 +11,6 @@
     text-align: center;
     padding-top: 200px;
     padding-bottom: 350px;
-    outline: 1px solid red !important;
 }
 
 #text-welcome{
@@ -61,10 +60,20 @@
      font-weight: 100;
      font-size: 52px;
  }
+ .blog-title {
+     font-weight: bold;
+ }
  #blogs-container {
      width:50%;
      margin: 0 auto;
  }
- .container-content {
+ .content-container {
      margin:10px;
  }
+.display-msg {
+    text-align: center;
+    font-weight: 100;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom:250px;
+}

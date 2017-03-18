@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
+    <!-- import parent's content-->
     {{ super() }}
     <title>Submit new post</title>
     <link rel='stylesheet' type='text/css' href='static/welcome.css'>
@@ -39,19 +40,27 @@
         {% if blogs %}
             {% for blog in blogs %}
                 <div class="row">
-                    <div class='blog-title'>
-                        <h3 class="blog-title">
+                    <div>
+                        <h3 class='blog-title'>
                             {{blog.subject}}
                         </h3>
                         <h4>created at {{blog.created}}</h4>
                         <!-- abstract text of the blog post-->
-                        <div class='container-content'>
+                        <div class='content-container'>
                             <pre>{{blog.content}}</pre>
                         </div>
                         <hr>
                     </div>
                 </div>
             {% endfor %}
+        {% else %}
+
+        <!--message shown if user has no blogs submitted-->
+        <div class='display-msg'>
+            <h3 class='text-thin'>
+                Nothing....
+            </h3>
+        </div>
     </div>
     {% endif %}
 {% endblock %}

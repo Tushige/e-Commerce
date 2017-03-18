@@ -48,3 +48,10 @@ Apparently, we need to modify the app.yaml file to include
 to indicate that static file request for url starting with /tuke should look
 for static files in the 'static' directory
 --------------------------------------------------------------------------------
+When I click on 'my profile' from a permalink page, I get a unicode error.
+Error: ASCII codec can't encode character
+CONCLUSION:
+    -   It turns out the error was happening in welcome.py where I was
+        printing the subject of a blog submitted by the user. the subject is a unicode
+        and couldn't be printed by python.
+--------------------------------------------------------------------------------

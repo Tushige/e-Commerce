@@ -4,7 +4,7 @@ This file contains the controller class for a new post permalink page
 from base import BaseHandler
 from blog_model import Blog
 import json
-# handler class for '/<postId>' - the permalink page of the new post
+# handler class for '/entry/<postId>' - the permalink page of the new post
 class PostHandler(BaseHandler):
     def get(self, postId, param):
         if param == '.json':

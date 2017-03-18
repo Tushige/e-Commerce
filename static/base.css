@@ -20,7 +20,10 @@ body {
     font-family:'Lato', sans-serif;
     background-color: #fcf9f9;
 }
-
+/*leave some space at the bottom of every page*/
+#main-content {
+    margin-bottom:250px;
+}
 pre {
     /* allows text wrapping for pre tagged text */
     white-space: pre-wrap;

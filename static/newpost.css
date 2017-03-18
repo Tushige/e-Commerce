@@ -23,6 +23,7 @@ textarea {
     height: 400px;
     font-size: 17px;
     font-family: monospace;
+    text-align: left;
 }
 input[type=submit] {
     font-size: 24px;

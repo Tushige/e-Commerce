@@ -11,8 +11,8 @@ from welcome import WelcomeHandler
 import string
 routes = [
     ('/(.json){0,1}', HomePageHandler),
-    # /<post_id> -> page of a blog post
-    ('/entry/([%s]{1,100})(.json){0,1}' % string.ascii_letters, PostHandler),
+    # /entry/<post_id> -> page of a blog post
+    ('/entry/([0-9]{1,100})(.json){0,1}', PostHandler),
     # /signup -> page for registering new user
     ('/signup', SignupHandler),
     # /login -> page for logging in

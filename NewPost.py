@@ -25,12 +25,10 @@ class NewpostHandler(BaseHandler):
         username = self.user.username
         # check that all required fields are filled in
         if subject and content:
-            newBlog = Blog(subject=subject, content=content, username=username, blog_id=str(username+subject))
+            newBlog = Blog(subject=subject, content=content, username=username)
             newBlog.content = newBlog.content.replace('\\n', '<br>')
-            # remove spaces when making id
-            newBlog.blog_id = newBlog.blog_id.replace(' ', '')
             key = newBlog.put()
-            self.redirect("/entry/%s" % newBlog.blog_id)
+            self.redirect("/entry/%s" % str(key.id()))
         else:
             error = 'Please submit both subject and content'
             self.render_newpost(subject=subject, content=content, error=error)

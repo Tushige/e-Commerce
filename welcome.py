@@ -12,8 +12,6 @@ class WelcomeHandler(BaseHandler):
         # if active user is present and its username matches username in url
         if self.user and self.user.username == param_username:
             blogs = self.user.getBlogs()
-            for blog in blogs:
-                print blog.subject
             self.render('welcome.html',user=self.user, blogs=blogs)
         # if user not found or username mismatch, go to homepage
         else:

@@ -9,7 +9,6 @@ class Blog(db.Model):
         subject = db.StringProperty(required = True)
         content = db.TextProperty(required = True)
         created = db.DateTimeProperty(auto_now_add = True)
-        blog_id = db.StringProperty(required = True)
         username = db.StringProperty(required = True)
 
         @classmethod
@@ -19,5 +18,6 @@ class Blog(db.Model):
             return blogs
         @classmethod
         def getById(cls, id):
-            blog = Blog.all().filter('blog_id =', str(id))
-            return blog.get()
+            # returns a blog instance
+            blog = Blog.get_by_id(int(id))
+            return blog
