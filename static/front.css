@@ -12,7 +12,6 @@
     font-size:12px;
     text-overflow: ellipsis;
 }
-
 /* title of a blog post */
 .blog-title a{
     text-decoration: none;
@@ -47,4 +46,18 @@
     margin-top:0;
     font-size:16px;
     color:#848484;
+}
+/* container of message that is shown when no posts are available*/
+.display-msg {
+    margin: 0 auto;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+/* The display message*/
+.display-msg h3 {
+    height:250px;
+    line-height: 250px;
+    white-space: nowrap;
 }

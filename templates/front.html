@@ -34,7 +34,9 @@
                                 <img src="static/images/saitama.jpg" class="img-profile">
                                 <div>
                                     <h4 class="username-profile">
-                                        <a href="/author/{{blog.username}}">{{blog.username}}</a>
+                                        <a href="/author/{{blog.username}}">
+                                            {{blog.profile_name}}
+                                        </a>
                                     </h4>
                                     <h4 class="date-profile">{{blog.created}}</h4>
                                 </div>
@@ -54,6 +56,13 @@
             </div>
         </div>
     </div>
+    <!--Display message when there are no blog posts-->
+    {% else %}
+        <div class="display-msg">
+            <h3 class="text-thin text-super">
+                Be the first blogger!
+            </h3>
+        </div>
     {% endif %}
 
 {% endblock %}

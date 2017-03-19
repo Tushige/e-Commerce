@@ -12,46 +12,48 @@
         {% endblock %}
     </head>
     <body>
-        <header>
-            {% block header %}
-            <div class='container-fluid'>
-                <div class='row'>
-                    <!-- page title-->
-                    <div class='col-md-6' id="title-header">
-                        <h1 class="text-left text-super text-thin">
-                            <a href='/'>
-                                BLOGzzz
-                            </a>
-                        </h1>
-                    </div>
-                    {% if user is none %}
-                        <!-- Sign In button-->
-                        <div class='col-md-6 btn-header'>
-                            <a href="http://localhost:8080/signin">
-                                <span>Sign in</span>
-                            </a>
+        <div id="header-container">
+            <header>
+                {% block header %}
+                <div class='container-fluid'>
+                    <div class='row'>
+                        <!-- page title-->
+                        <div class='col.xs-2 col-md-6' id="title-header">
+                            <h1 class="text-left text-super text-thin">
+                                <a href='/'>
+                                    BLOGzzz
+                                </a>
+                            </h1>
                         </div>
-                    {% else %}
-                        <!-- Sign Out button-->
-                        <div class='col-md-3 btn-header'>
-                            <a href="http://localhost:8080/signout">
-                                <span>Sign Out</span>
-                            </a>
-                        </div>
+                        {% if user is none %}
+                            <!-- Sign In button-->
+                            <div class='col.xs-4 col-md-6 btn-header'>
+                                <a href="http://localhost:8080/signin">
+                                    <span>Sign in</span>
+                                </a>
+                            </div>
+                        {% else %}
+                            <!-- Sign Out button-->
+                            <div class='col.xs-3 col-md-3 btn-header'>
+                                <a href="http://localhost:8080/signout">
+                                    <span>Sign Out</span>
+                                </a>
+                            </div>
 
-                        <!-- my profile button-->
-                        <div class='col-md-3 btn-header'>
-                            <a href="http://localhost:8080/author/{{user.username}}">
-                                <span>My Profile</span>
-                            </a>
-                        </div>
+                            <!-- my profile button-->
+                            <div class='col.xs-3 col-md-3 btn-header'>
+                                <a href="http://localhost:8080/author/{{user.username}}">
+                                    <span>My Profile</span>
+                                </a>
+                            </div>
 
-                    {% endif %}
-                    </div>
-                </div> <!-- row-->
-            </div> <!-- container-->
-            {% endblock%}
-        </header>
+                        {% endif %}
+                        </div>
+                    </div> <!-- row-->
+                </div> <!-- container-->
+                {% endblock%}
+            </header>
+        </div>
         <!-- area for the derived html to post content-->
         <div id='main-content'>
             {% block content%}

@@ -1,50 +1,68 @@
-/* outermost container*/
-#container {
-    width:70%;
-    text-align: left;
+/* outermost container */
+#main-container {
+    width: 70%;
     margin: 0 auto;
 }
-/* container for user profile information*/
-#profile {
-    display: flex;
+/* Area containing the title of the body*/
+#title-container {
     margin-top:50px;
-    margin-bottom:50px;
+}
+/* area encompassing 'all' the individual field containers */
+#info-container {
+    margin-top:100px;
+}
+/* area containing individual fields*/
+.field-container {
+    display: flex;
+    position: relative; /*part of: centers children vertically*/
+    overflow: hidden;
+    margin-bottom: 10px;
     text-align: left;
 }
+/* container of biography info*/
+.field-textarea-container {
+    display: flex;
+    position: relative;
+    height: 200px;
+}
 
-#profile-img {
-    width:200px;
+.field-name {
+    padding:0;
+    margin:0;
+    height:40px;
+    line-height:40px;
+    color:#8c8c8c;
+}
+
+input[type=text] {
+    /* centers vertically*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* end */
+    margin-left:20px;
+}
+
+input {
+    width: 300px;
+    height:30px;
+    background: #fcf9f9;
+    border:1px solid #8c8c8c;
+    border-radius: 10px;
+    outline: none;
+    text-align: left;
+    /* changes cursor color to white */
+    color:#8c8c8c;
+}
+
+textarea {
+    margin-left: 20px;
+    width:600px;
     height:200px;
-    border-radius: 50%;
-}
-/* container for user identification info*/
-#profile-details {
-    margin-left:10px;
-}
-/* user details such as occupation, place of employment etc*/
-#user-info {
-    color: #8e8e8e;
-    font-size:36px;
-}
-#profile-username {
-    font-weight: bold;
-    font-size: 50px;
-}
-/* page subtitle*/
-#page-subtitle {
-    text-align: center;
-}
-#page-subtitle h3 {
-    font-weight: 100;
-    font-size: 52px;
-}
-.blog-title {
-    font-weight: bold;
-}
-/* container for placeholder message */
-.display-msg-container {
-    text-align: center;
-}
-.display-msg h3 {
-    color: red;
+    background: #fcf9f9;
+    color:#8c8c8c;
+    border-radius: 10px;
+    border:1px solid #8c8c8c;
+    outline:none;
+    text-align: left;
 }

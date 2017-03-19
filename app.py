@@ -8,7 +8,7 @@ from signup import SignupHandler
 from signin import SigninHandler
 from signout import SignoutHandler
 from welcome import WelcomeHandler
-from profileView import ProfileViewHandler
+from profile import ProfileHandler
 from error import Error404Handler
 import string
 routes = [
@@ -23,9 +23,10 @@ routes = [
     ('/signout', SignoutHandler),
     # /username -> user front page
     ('/author/([a-zA-Z0-9_-]{3,20})', WelcomeHandler),
+    ('/author/([a-zA-Z0-9_-]{3,20})/profile', ProfileHandler),
     # /<username>/newpost -> to submit a new post
     ('/([a-zA-Z0-9_-]{3,20})/newpost', NewpostHandler),
-    ('/.*', Error404Handler)
+    ('/(.*)', Error404Handler)
 ]
 
 app = webapp2.WSGIApplication(routes=routes, debug=True)

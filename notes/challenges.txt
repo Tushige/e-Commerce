@@ -55,3 +55,19 @@ CONCLUSION:
         printing the subject of a blog submitted by the user. the subject is a unicode
         and couldn't be printed by python.
 --------------------------------------------------------------------------------
+I'm working on the profile page right now, and I wanted the field name and
+field input to appear next to each other.
+Although they appear next to each other, the input field is higher than the name field.
+Approaches:
+    1. center both the input field and name fields
+--------------------------------------------------------------------------------
+My header is collapsing when I make the browser slightly smaller
+APPROACHES:
+    1.  I think I need to define the column size differently for different sizes
+--------------------------------------------------------------------------------
+I added the notion of profile_name, which has different purpose than username
+This separation broke some logic in my app, and now I have to fix it.
+This app used username to check registration as well as the existence of a profile
+page. Now that username and profile_name are separate, the logic for checking
+needs to lookup their respective names.
+--------------------------------------------------------------------------------

@@ -3,6 +3,7 @@
 {% block head %}
     <!-- import parent's content-->
     {{ super() }}
+    <title>Submit new post</title>
     <link rel='stylesheet' type='text/css' href='static/profile.css'>
 {% endblock %}
 
@@ -12,57 +13,53 @@
 {% endblock %}
 
 {% block content %}
-    <div id="container">
-        <!--Profile Information-->
-        <div id='profile'>
-            <img src="static/images/saitama.jpg" id="profile-img">
-            <div id="profile-details">
-                <h2 id="profile-username">{{author.username}}</h2>
-                {% if author.occupation and author.employment%}
-                <h4 id="user-info">{{author.occupation}}, {{author.employment}} </h4>
-                {% elif author.occupation %}
-                    <h4 id="user-info">{{author.occupation}}</h4>
-                {% elif author.employement %}
-                    <h4 id="user-info">{{author.employment}}</h4>
-                {% endif %}
-            </div>
+    <div class="container-fluid" id="main-container">
+        <!-- title -->
+        <div id="title-container">
+            <h1>Profile</h1>
+            <h4>Tell us a little bit about yourself</h4>
+            <hr>
         </div>
-        <!-- user submission history-->
-        <div id="page-subtitle">
-            <!-- title of the second pane-->
-            <h3>
-                Submission History
-            </h3>
-        </div>
-        <hr style="width:70%;">
-
-        <!-- container of rows of submitted blog posts -->
-        <div>
-            {% if blogs %}
-                {% for blog in blogs %}
-                    <div class="row">
-                        <div>
-                            <h3 class='blog-title'>
-                                {{blog.subject}}
-                            </h3>
-                            <h4>created at {{blog.created}}</h4>
-                            <!-- abstract text of the blog post-->
-                            <div>
-                                <pre>{{blog.content}}</pre>
-                            </div>
-                            <hr>
-                        </div>
+        <form method='post'>
+            <div id="info-container">
+                <!--Name-->
+                <div class="row field-container">
+                    <div class="col-xs-4 col-md-4">
+                        <h3 class="field-name">Name </h3>
                     </div>
-                {% endfor %}
-            {% else %}
-
-            <!--message shown if user has no blogs submitted-->
-            <div class='display-msg-container'>
-                <h3 class='text-thin'>
-                    Nothing....
-                </h3>
-            </div>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="text" name="profile_name">
+                    </div>
+                </div>
+                <!--Occupation-->
+                <div class="row field-container">
+                    <div class="col-xs-4 col-md-4">
+                        <h3 class="field-name">Occupation </h3>
+                    </div>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="text" name="occupation">
+                    </div>
+                </div>
+                <!--Occupation-->
+                <div class="row field-container">
+                    <div class="col-xs-4 col-md-4">
+                        <h3 class="field-name">Employment </h3>
+                    </div>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="text" name="employment">
+                    </div>
+                </div>
+                <!-- biography -->
+                <div class="row field-textarea-container">
+                    <div class="col-xs-4 col-md-4">
+                        <h3 class="field-name">Biography </h3>
+                    </div>
+                    <div class="col-xs-8 col-md-8">
+                        <textarea name="biography"></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="save">
+            </form>
         </div>
     </div>
-    {% endif %}
 {% endblock %}

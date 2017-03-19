@@ -10,14 +10,29 @@ class Blog(db.Model):
         content = db.TextProperty(required = True)
         created = db.DateTimeProperty(auto_now_add = True)
         username = db.StringProperty(required = True)
+        profile_name = db.StringProperty(required = True)
+        @classmethod
+        def createBlog(cls, subject, content, username, profile_name):
+            newBlog = Blog(subject = subject,
+                           content = content,
+                           username= username,
+                           profile_name = profile_name)
+            return newBlog
 
         @classmethod
         def getAll(cls):
             # @blogs: cursor to the results
             blogs = db.GqlQuery("SELECT * FROM Blog ORDER BY created DESC limit 10")
-            return blogs
+            return list(blogs)
+
         @classmethod
         def getById(cls, id):
             # returns a blog instance
             blog = Blog.get_by_id(int(id))
             return blog
+
+        @classmethod
+        # @return: list of blogs submitted by <username>
+        def getBlogsByUsername(cls, username):
+            blogs = Blog.all().filter('username =', str(username))
+            return list(blogs)

@@ -19,7 +19,7 @@ class SigninHandler(BaseHandler):
 
         # math username with password
         if userError=='' and passError=='':
-            user = User.getUserByName(username)
+            user = User.getUserByUsername(username)
             # username not found in db -> show error
             if user is None:
                 self.render('signin.html', user=self.user, userError='username not found!')

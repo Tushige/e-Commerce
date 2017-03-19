@@ -23,9 +23,13 @@ class NewpostHandler(BaseHandler):
         subject = self.request.get('subject')
         content = self.request.get('content')
         username = self.user.username
+        profile_name = self.user.profile_name
         # check that all required fields are filled in
         if subject and content:
-            newBlog = Blog(subject=subject, content=content, username=username)
+            newBlog = Blog.createBlog(subject=subject,
+                                      content=content,
+                                      username=username,
+                                      profile_name=profile_name)
             newBlog.content = newBlog.content.replace('\\n', '<br>')
             key = newBlog.put()
             self.redirect("/entry/%s" % str(key.id()))
