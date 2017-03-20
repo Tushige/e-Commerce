@@ -74,12 +74,12 @@ input {
 /* add/modify style for submit input*/
 .btn {
     text-align: center;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 20px;
     width:300px;
     height:50px;
     border-radius: 10px;
-    border: 1px solid;
+    border: 2px solid;
     border-color: rgba(255,255,255,0.6);
     color:white;
     transition: 0.5s linear box-shadow;
@@ -106,13 +106,13 @@ input {
     display: block;
     float: none;
     top: 0px;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 20px;
     transition: font 0.5s ease;
     background-color:rgba(0,0,0,0.0);
     border-color: rgba(255,255,255,0.6);
     border-radius:10px;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     color:white;
     width:300px;

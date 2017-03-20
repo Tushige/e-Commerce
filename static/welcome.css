@@ -18,7 +18,7 @@
 #text-welcome{
     font-size: 52px;
     color:white;
-    font-weight: 100;
+    font-weight: 300;
 }
 #btn-newpost a{
     text-decoration: none;
@@ -29,13 +29,13 @@
 #btn-newpost span {
     display: block;
     top: 0px;
-    font-weight: 100;
+    font-weight: 300;
     transition: font 1.7s ease;
     font-size: 20px;
     background-color:rgba(0,0,0,0.0);;
-    border-color: rgba(255,255,255,0.6);
+    border-color: rgba(255,255,255,0.7);
     border-radius:10px;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     color:white;
     width:150px;
@@ -59,7 +59,7 @@
      text-align: center;
  }
  #title-history h3 {
-     font-weight: 100;
+     font-weight: 300;
      font-size: 52px;
  }
  .blog-title {
@@ -74,7 +74,7 @@
  }
 .display-msg {
     text-align: center;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 36px;
     margin-top: 50px;
     margin-bottom:250px;
