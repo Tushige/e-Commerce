@@ -28,20 +28,20 @@
                         {% if user is none %}
                             <!-- Sign In button-->
                             <div class='col-xs-4 col-sm-4 col-md-4 btn-header'>
-                                <a href="http://localhost:8080/signin">
+                                <a href="/signin">
                                     <span>Sign in</span>
                                 </a>
                             </div>
                         {% else %}
                             <!-- Sign Out button-->
                             <div class='col-xs-4 col-sm-4 col-md-2 btn-header'>
-                                <a href="http://localhost:8080/signout">
+                                <a href="/signout">
                                     <span>Sign Out</span>
                                 </a>
                             </div>
                             <!-- my profile button-->
                             <div class='col-xs-4 col-sm-4 col-md-2 btn-header'>
-                                <a href="http://localhost:8080/author/{{user.username}}">
+                                <a href="/author/{{user.username}}">
                                     <span>My Profile</span>
                                 </a>
                             </div>

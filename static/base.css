@@ -45,15 +45,15 @@ pre {
     background-color:rgba(0,0,0,0.0);
     color:white;
 
-    border-color: rgba(255,255,255,0.3);
+    border-color: rgba(255,255,255,0.7);
     border-radius:10px;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
 
     width:140px;
     height:50px;
     font-size:20px;
-    font-weight: 100;
+    font-weight: 300;
     /* positions text 40px below the top*/
     line-height:45px;
     text-align:center;
