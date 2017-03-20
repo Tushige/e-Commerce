@@ -71,3 +71,5 @@ This app used username to check registration as well as the existence of a profi
 page. Now that username and profile_name are separate, the logic for checking
 needs to lookup their respective names.
 --------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------

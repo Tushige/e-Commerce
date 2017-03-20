@@ -9,7 +9,31 @@
 
 <!-- use header provided by base -->
 {% block header %}
-    {{ super() }}
+<div class='container-fluid'>
+    <div class='row'>
+        <!-- page title-->
+        <div class='col.xs-2 col-md-6' id="title-header">
+            <h1 class="text-left text-super text-thin">
+                <a href='/'>
+                    BLOGzzz
+                </a>
+            </h1>
+        </div>
+            <!-- Sign Out button-->
+            <div class='col.xs-3 col-md-3 btn-header'>
+                <a href="http://localhost:8080/signout">
+                    <span>Sign Out</span>
+                </a>
+            </div>
+            <!-- my profile button-->
+            <div class='col.xs-3 col-md-3 btn-header'>
+                <a href="http://localhost:8080/author/{{user.username}}/profile">
+                    <span>Edit Profile</span>
+                </a>
+            </div>
+        </div>
+    </div> <!-- row-->
+</div> <!-- container-->
 {% endblock %}
 
 {% block content %}
