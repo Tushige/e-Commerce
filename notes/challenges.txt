@@ -71,5 +71,7 @@ This app used username to check registration as well as the existence of a profi
 page. Now that username and profile_name are separate, the logic for checking
 needs to lookup their respective names.
 --------------------------------------------------------------------------------
-
+My background images appeared differently on screens with different sizes.
+SOLUTION: get several versions of the image and use the appropriate one based
+on screen resolution. mediaquery can do the job.
 --------------------------------------------------------------------------------

@@ -1,12 +1,25 @@
-/***************************
+/*1280x800*/
+@media screen  and (min-width: 800px) {
+    .container-welcome {
+        background-image: url('/static/images/rocky_shore_sunset_5k-1280x800.jpg');
+    }
+}
+/*1600x900*/
+@media screen  and (min-width: 900px) {
+    .container-welcome {
+        background-image: url('/static/images/rocky_shore_sunset_5k-1600x900.jpg');
+    }
+}
+/*1920x1080*/
+@media screen  and (min-width: 1080px) {
+    .container-welcome {
+        background-image: url('/static/images/rocky_shore_sunset_5k-1920x1080.jpg');
+    }
+}
+/****************************************
  * big space for 'welcome' and 'new post'
- ****************************/
+ ****************************************/
 .container-welcome {
-    background-image: url('/static/images/starry_mountain.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-color:#d4d4d6;
-
     color: white;
     text-align: center;
     padding-top: 200px;
@@ -16,7 +29,7 @@
     float:right;
 }
 #text-welcome{
-    font-size: 52px;
+    font-size: 64px;
     color:white;
     font-weight: 300;
 }
@@ -32,13 +45,13 @@
     font-weight: 300;
     transition: font 1.7s ease;
     font-size: 20px;
-    background-color:rgba(0,0,0,0.0);;
+    background-color:rgba(0,0,0,0.0);
     border-color: rgba(255,255,255,0.7);
     border-radius:10px;
     border-width: 2px;
     border-style: solid;
     color:white;
-    width:150px;
+    width:250px;
     height:50px;
 
     /* positions text 40px below the top*/
@@ -55,10 +68,11 @@
 /*******************************************
  * for blogs submitted by this user
  *******************************************/
- #title-history {
+
+ #title-history-container {
      text-align: center;
  }
- #title-history h3 {
+ #title-history-container h3 {
      font-weight: 300;
      font-size: 52px;
  }
