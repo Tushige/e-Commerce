@@ -5,16 +5,17 @@
  *
  */
 body {
+    background: #C04848; /* fallback for old browsers */
     /*
      * got this gradient from www.uigradients.com
      */
-    background: #C04848; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
 }
 
 /* The header of the web page*/
 #title-header {
+    width:100%;
     background-color: #fcf9f9;
 }
 
@@ -28,7 +29,7 @@ body {
 
 /* main content box */
 .container-panel {
-    width:40%;
+    width:500px;
     margin: 20px auto;
     padding: 20px;
     text-align: center;

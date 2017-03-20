@@ -1,25 +1,37 @@
-/*1280x800*/
-@media screen  and (min-width: 800px) {
+/*general background for phone*/
+@media screen and (min-width: 350px) {
     .container-welcome {
-        background-image: url('/static/images/rocky_shore_sunset_5k-1280x800.jpg');
+        background-image: url('/static/images/iphone/background_6s_750x1334.jpg');
+        background-size: 100% 100%;
     }
 }
-/*1600x900*/
-@media screen  and (min-width: 900px) {
+/*1280x800*/
+@media screen and (min-width: 600px) {
     .container-welcome {
-        background-image: url('/static/images/rocky_shore_sunset_5k-1600x900.jpg');
+        height:800px;
+        background-image: url('/static/images/background_1280x800.jpg');
     }
 }
 /*1920x1080*/
-@media screen  and (min-width: 1080px) {
+@media screen and (min-width: 700px) {
     .container-welcome {
-        background-image: url('/static/images/rocky_shore_sunset_5k-1920x1080.jpg');
+        height:800px;
+        background-image: url('/static/images/background_1920x1080.jpg');
+    }
+}
+/*2560x1440*/
+@media screen and (min-width: 2000px) {
+    .container-welcome {
+        height:1440;
+        background-image: url('/static/images/background_2560x1440.jpg');
     }
 }
 /****************************************
  * big space for 'welcome' and 'new post'
  ****************************************/
 .container-welcome {
+    background-repeat: no-repeat;
+    background-color:#d4d4d6;
     color: white;
     text-align: center;
     padding-top: 200px;
@@ -42,7 +54,7 @@
 #btn-newpost span {
     display: block;
     top: 0px;
-    font-weight: 300;
+    font-weight: bold;
     transition: font 1.7s ease;
     font-size: 20px;
     background-color:rgba(0,0,0,0.0);

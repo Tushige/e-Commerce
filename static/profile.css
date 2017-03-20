@@ -45,7 +45,7 @@ input[type=text] {
 }
 
 input {
-    width: 300px;
+    width: 50%;
     height:30px;
     background: #fcf9f9;
     border:1px solid #8c8c8c;
@@ -58,7 +58,7 @@ input {
 textarea {
     margin-left: 20px;
     margin-top: 5px;
-    width:600px;
+    width:80%;
     height:200px;
     background: #fcf9f9;
     color:#8c8c8c;
