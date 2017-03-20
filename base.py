@@ -40,6 +40,7 @@ class BaseHandler(webapp2.RequestHandler):
     def login(self, user):
         self.setCookie('user_id', user.key().id())
         self.setCookie('username', user.username)
+        
     def logout(self):
         self.setCookie('user_id', '')
         self.setCookie('username', '')
