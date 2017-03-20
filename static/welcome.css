@@ -13,16 +13,16 @@
     }
 }
 /*1920x1080*/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1300px) {
     .container-welcome {
-        height:800px;
+        height:1080px;
         background-image: url('/static/images/background_1920x1080.jpg');
     }
 }
 /*2560x1440*/
 @media screen and (min-width: 2000px) {
     .container-welcome {
-        height:1440;
+        height:1440px;
         background-image: url('/static/images/background_2560x1440.jpg');
     }
 }
