@@ -30,18 +30,17 @@ pre {
     font-family:'Lato', sans-serif;
     font-size:18px;
 }
+
 /* Sign In, Sign Out, My Profile buttons*/
 .btn-header a{
     margin: 10px;
     float: right;
     text-decoration: none!important;
 }
+
 .btn-header span{
     display: inline-block;
-    float:center;
-    position:relative;
     /*why does this add smoothness?*/
-    top: 0px;
     margin-top: 10px;
     background-color:rgba(0,0,0,0.0);
     color:white;
@@ -60,23 +59,28 @@ pre {
     text-align:center;
     user-select:none;
 }
+
 /* changes color of span buttons when user hovers over it */
 .btn-header span:hover {
     background-color:#e0e2e5;
     color: #532d5e;
 }
+
 /* describes a large text: used in titles */
 .text-super {
     font-size:48px;
 }
+
 /* describes a thin text: used in pane titles */
 .text-thin {
     font-weight: 100;
 }
+
 /* draws a vertical line to a container element */
 .verticalLine {
   border-left: thin solid #d1d1d1;
 }
+
 hr {
     border:none;
     height:1px;

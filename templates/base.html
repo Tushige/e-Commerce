@@ -18,7 +18,7 @@
                 <div class='container-fluid'>
                     <div class='row'>
                         <!-- page title-->
-                        <div class='col.xs-2 col-md-6' id="title-header">
+                        <div class='col-xs-8 col-sm-8 col-md-8' id="title-header">
                             <h1 class="text-left text-super text-thin">
                                 <a href='/'>
                                     BLOGzzz
@@ -27,20 +27,20 @@
                         </div>
                         {% if user is none %}
                             <!-- Sign In button-->
-                            <div class='col.xs-4 col-md-6 btn-header'>
+                            <div class='col-xs-4 col-sm-4 col-md-4 btn-header'>
                                 <a href="http://localhost:8080/signin">
                                     <span>Sign in</span>
                                 </a>
                             </div>
                         {% else %}
                             <!-- Sign Out button-->
-                            <div class='col.xs-3 col-md-3 btn-header'>
+                            <div class='col-xs-4 col-sm-4 col-md-2 btn-header'>
                                 <a href="http://localhost:8080/signout">
                                     <span>Sign Out</span>
                                 </a>
                             </div>
                             <!-- my profile button-->
-                            <div class='col.xs-3 col-md-3 btn-header'>
+                            <div class='col-xs-4 col-sm-4 col-md-2 btn-header'>
                                 <a href="http://localhost:8080/author/{{user.username}}">
                                     <span>My Profile</span>
                                 </a>

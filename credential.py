@@ -15,7 +15,7 @@ class Credential:
         if len(name) < 1:
             return error_msg
         elif name.find(' ') > 0:
-            return error_msg
+            return 'username cannot contain space'
         return ''
 
     @staticmethod
