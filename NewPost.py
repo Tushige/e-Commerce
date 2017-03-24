@@ -3,9 +3,11 @@ This file contains the controller class for blog submit page
 '''
 from base import BaseHandler
 from blog_model import Blog
+from cache import Cache
 
 # handler class for '/newpost' - page for submitting a new post
 class NewpostHandler(BaseHandler):
+    # render the template with given params
     def render_newpost(self, subject='', content='', error=''):
         self.render('newpost.html', subject=subject, content=content, user=self.user,error=error)
 
@@ -31,6 +33,8 @@ class NewpostHandler(BaseHandler):
                                       username=username,
                                       profile_name=profile_name)
             newBlog.content = newBlog.content.replace('\\n', '<br>')
+            # flush the cache on db write
+            Cache.flush()
             key = newBlog.put()
             self.redirect("/entry/%s" % str(key.id()))
         else:

@@ -4,11 +4,10 @@ This file contains the class that handles profile view page
 from base import BaseHandler
 from user_model import User
 from blog_model import Blog
+from cache import Cache
+
 class ProfileHandler(BaseHandler):
     def get(self, param_username):
-        print '99999999999999999'
-        print 'WELCOMEHANDLER'
-        print '99999999999999999'
         # signed in user is visiting his/her profile
         if self.user and self.user.username == param_username:
             self.render('profile.html', user=self.user)
@@ -29,7 +28,9 @@ class ProfileHandler(BaseHandler):
     def updateUser(self, profile_name, occupation, employment, biography):
         # save profile name
         if profile_name:
-            blogs = self.user.getBlogs()
+            blogs = Cache.getBlogsForUser(self.user.username)
+            # flush the cache since we're writing to db
+            Cache.flush()
             # update blog username to reflect the changes
             for blog in blogs:
                 blog.profile_name = profile_name

@@ -4,6 +4,7 @@ The class contains class methods that operate on the 'entity' object
 '''
 from google.appengine.ext import db
 from blog_model import Blog
+from cache import Cache
 # create 'entity'
 class User(db.Model):
         # create db columns
@@ -17,11 +18,6 @@ class User(db.Model):
         occupation = db.StringProperty()
         employment = db.StringProperty()
         biography = db.TextProperty()
-
-        # @return: all the blogs submitted by this user
-        def getBlogs(self):
-            blogs = Blog.all().filter('username =', str(self.username))
-            return list(blogs)
 
         @classmethod
         # method for creating a User object
